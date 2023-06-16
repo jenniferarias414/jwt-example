@@ -20,6 +20,8 @@ function App() {
       .post("/api/createToken", body)
       .then((res) => {
         console.log(res);
+        setToken(res.data)
+        localStorage.setItem('token', res.data)
       })
       .catch((err) => {
         console.error(err);
@@ -36,6 +38,13 @@ function App() {
         console.error(err);
       });
   };
+
+  useEffect(() => {
+    let savedToken = localStorage.getItem('token')
+    if(savedToken) {
+      setToken(savedToken)
+    }
+  },[])
 
   return (
     <div className="App">
