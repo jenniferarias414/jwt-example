@@ -32,10 +32,10 @@ function App() {
     axios
       .post("/api/validateToken")
       .then((res) => {
-        console.log(res);
+        alert('Token is Valid! 🤓')
       })
       .catch((err) => {
-        console.error(err);
+        alert("Token is invalid 😭")
       });
   };
 
