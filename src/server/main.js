@@ -3,6 +3,7 @@ const ViteExpress = require("vite-express");
 const { createToken, validateToken } = require("./controllers/auth");
 
 const app = express();
+app.use(express.json())
 
 app.post('/api/createToken', createToken)
 

@@ -11,11 +11,11 @@ function App() {
   const createToken = (e) => {
     e.preventDefault();
     let body = {
-      name: nameRef.current.value,
+      username: nameRef.current.value,
       email: emailRef.current.value,
       password: passRef.current.value,
     };
-
+    console.log(body)
     axios
       .post("/api/createToken", body)
       .then((res) => {
